@@ -2,10 +2,21 @@ import 'dotenv/config'
 import cors from 'cors'
 import express from 'express'
 import models, { connectDb } from './models'
+import routes from './routes'
 
 const app = express()
 
 app.use(cors())
+app.use(async (req, res, next) => {
+    req.context = {
+        models,
+        me: await models.User.findByLogin('gigasturtz'),
+    }
+    next()
+})
+
+app.use('/user', routes.user)
+app.use('/event', routes.event)
 
 app.get('/', (req, res) => {
     res.send('Hello world!')
