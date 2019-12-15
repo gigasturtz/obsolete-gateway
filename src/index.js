@@ -54,7 +54,38 @@ const createUserWithEvents = async () => {
         user: user1.id,
     })
 
+    const event2 = new models.Event({
+        description: 'The Connors',
+        location: 'The House of Connor',
+        date: 'a year from now',
+        time: '8 am',
+        cover: '$10',
+        user: user1.id,
+    })
+
+    const event3 = new models.Event({
+        description: 'Lorenzo Senni',
+        location: 'somewhere in italy',
+        date: 'thursday',
+        time: '11 pm',
+        cover: '$4',
+        user: user1.id,
+    })
+
+    const event4 = new models.Event({
+        description: 'Steve',
+        location: 'Mars',
+        date: 'Always',
+        time: '13 PM',
+        cover: '$400',
+        user: user1.id,
+    })
+
     await event1.save()
+    await event2.save()
+    await event3.save()
+    await event4.save()
+
 
     await user1.save()
 
