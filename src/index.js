@@ -51,6 +51,7 @@ const createUserWithEvents = async () => {
         date: 'tomorrow',
         time: '4 am',
         cover: '$40',
+        image: 'https://obsolete-storage.s3.amazonaws.com/Test-Image.JPG',
         user: user1.id,
     })
 
@@ -60,6 +61,7 @@ const createUserWithEvents = async () => {
         date: 'a year from now',
         time: '8 am',
         cover: '$10',
+        image: 'https://obsolete-storage.s3.amazonaws.com/Test-Image.JPG',
         user: user1.id,
     })
 
@@ -69,6 +71,7 @@ const createUserWithEvents = async () => {
         date: 'thursday',
         time: '11 pm',
         cover: '$4',
+        image: 'https://obsolete-storage.s3.amazonaws.com/Test-Image.JPG',
         user: user1.id,
     })
 
@@ -78,6 +81,7 @@ const createUserWithEvents = async () => {
         date: 'Always',
         time: '13 PM',
         cover: '$400',
+        image: 'https://obsolete-storage.s3.amazonaws.com/Test-Image.JPG',
         user: user1.id,
     })
 

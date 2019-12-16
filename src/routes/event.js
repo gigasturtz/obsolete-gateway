@@ -20,6 +20,7 @@ router.post('/', async (req, res) => {
         date: req.body.date,
         time: req.body.time,
         cover: req.body.cover,
+        image: req.body.image,
         user: req.context.me.id
     })
 
