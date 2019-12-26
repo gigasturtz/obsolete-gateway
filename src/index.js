@@ -3,9 +3,11 @@ import cors from 'cors'
 import express from 'express'
 import models, { connectDb } from './models'
 import routes from './routes'
+import bodyParser from 'body-parser'
 
 const app = express()
 
+app.use(bodyParser.json())
 app.use(cors())
 app.use(async (req, res, next) => {
     req.context = {
@@ -61,7 +63,7 @@ const createUserWithEvents = async () => {
         date: 'a year from now',
         time: '8 am',
         cover: '$10',
-        image: 'https://obsolete-storage.s3.amazonaws.com/Test-Image.JPG',
+        image: 'https://obsolete-storage.s3.amazonaws.com/Test-Image2.jpg',
         user: user1.id,
     })
 
@@ -71,7 +73,7 @@ const createUserWithEvents = async () => {
         date: 'thursday',
         time: '11 pm',
         cover: '$4',
-        image: 'https://obsolete-storage.s3.amazonaws.com/Test-Image.JPG',
+        image: 'https://obsolete-storage.s3.amazonaws.com/Test-Image2.jpg',
         user: user1.id,
     })
 
