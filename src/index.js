@@ -19,12 +19,13 @@ app.use(async (req, res, next) => {
 
 app.use('/user', routes.user)
 app.use('/event', routes.event)
+app.use('/googleUrl', routes.googleUrl)
 
 app.get('/', (req, res) => {
     res.send('Hello world!')
 })
 
-const eraseDatabaseOnSync = true; 
+const eraseDatabaseOnSync = false; 
 
 connectDb().then(async () => { 
 
@@ -91,9 +92,5 @@ const createUserWithEvents = async () => {
     await event2.save()
     await event3.save()
     await event4.save()
-
-
     await user1.save()
-
-
 }
